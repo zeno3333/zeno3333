@@ -8,7 +8,8 @@ const logos = [
   { src: "/logo-6.svg", name: "Logo 6" },
 ]
 
-const duplicatedLogos = [...logos, ...logos]
+// 4 copies pour couvrir large et garantir la boucle seamless
+const duplicatedLogos = [...logos, ...logos, ...logos, ...logos]
 
 export function LogoBanner() {
   return (
@@ -31,23 +32,20 @@ export function LogoBanner() {
         </div>
       </div>
 
-      <div className="bg-primary py-8 overflow-hidden">
-        <div
-          className="flex items-center w-max animate-logo-scroll"
-          aria-label="Logos de clients"
-        >
+      <div className="bg-primary py-10 overflow-hidden">
+        <div className="flex items-center animate-logo-scroll">
           {duplicatedLogos.map((logo, index) => (
             <div
               key={index}
-              className="flex-shrink-0 w-48 flex items-center justify-center px-8"
+              className="flex-shrink-0 w-64 flex items-center justify-center px-10"
               aria-hidden={index >= logos.length ? true : undefined}
             >
               <Image
                 src={logo.src}
                 alt={index < logos.length ? logo.name : ""}
-                width={150}
-                height={60}
-                className="h-14 w-auto object-contain brightness-0 invert opacity-90"
+                width={180}
+                height={80}
+                className="h-20 w-auto object-contain brightness-0 invert opacity-90"
               />
             </div>
           ))}

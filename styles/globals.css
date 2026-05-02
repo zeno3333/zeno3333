@@ -138,3 +138,17 @@
 @utility animate-logo-scroll {
   animation: logo-scroll 20s linear infinite;
 }
+
+@keyframes logo-scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-25%);
+  }
+}
+
+@utility animate-logo-scroll {
+  animation: logo-scroll 30s linear infinite;
+}
