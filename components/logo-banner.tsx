@@ -8,13 +8,11 @@ const logos = [
   { src: "/logo-6.svg", name: "Logo 6" },
 ]
 
-// Duplication dans le JS pour un seul bloc animé jusqu'à -50%
 const duplicatedLogos = [...logos, ...logos]
 
 export function LogoBanner() {
   return (
     <section className="overflow-hidden">
-      {/* Intro text */}
       <div className="bg-background py-16 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl mb-6">
@@ -33,9 +31,7 @@ export function LogoBanner() {
         </div>
       </div>
 
-      {/* Logo banner — infinite scroll */}
       <div className="bg-primary py-8 overflow-hidden">
-        {/* Un seul conteneur animé à -50% pour la boucle seamless */}
         <div
           className="flex items-center w-max animate-logo-scroll"
           aria-label="Logos de clients"
@@ -44,7 +40,6 @@ export function LogoBanner() {
             <div
               key={index}
               className="flex-shrink-0 w-48 flex items-center justify-center px-8"
-              // Les doublons sont masqués pour les lecteurs d'écran
               aria-hidden={index >= logos.length ? true : undefined}
             >
               <Image
@@ -52,7 +47,7 @@ export function LogoBanner() {
                 alt={index < logos.length ? logo.name : ""}
                 width={150}
                 height={60}
-                className="h-14 w-auto object-contain opacity-80 brightness-0 invert"
+                className="h-14 w-auto object-contain brightness-0 invert opacity-90"
               />
             </div>
           ))}
