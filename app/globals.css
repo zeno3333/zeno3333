@@ -121,6 +121,7 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
@@ -131,11 +132,12 @@
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(-50%);
   }
 }
 
-.animate-logo-scroll {
+@utility animate-logo-scroll {
   animation: logo-scroll 20s linear infinite;
 }
