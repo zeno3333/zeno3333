@@ -127,15 +127,15 @@
 }
 
 /* Infinite scroll animation for logo banner */
-@keyframes scroll {
+@keyframes logo-scroll {
   0% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(-50%);
   }
 }
 
-.animate-scroll {
-  animation: scroll 25s linear infinite;
+.animate-logo-scroll {
+  animation: logo-scroll 20s linear infinite;
 }
