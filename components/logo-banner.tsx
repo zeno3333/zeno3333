@@ -6,10 +6,8 @@ const logos = [
   { src: "/logo-4.svg", name: "Logo 4" },
   { src: "/logo-5.svg", name: "Logo 5" },
   { src: "/logo-6.svg", name: "Logo 6" },
-  { src: "/logo-7.png", name: "Logo 6" },
 ]
 
-// 4 copies pour couvrir large et garantir la boucle seamless
 const duplicatedLogos = [...logos, ...logos, ...logos, ...logos]
 
 export function LogoBanner() {
@@ -46,7 +44,7 @@ export function LogoBanner() {
                 alt={index < logos.length ? logo.name : ""}
                 width={180}
                 height={80}
-                className="h-20 w-auto object-contain brightness-0 invert opacity-90"
+                className="h-28 w-auto object-contain brightness-0 invert opacity-90"
               />
             </div>
           ))}
