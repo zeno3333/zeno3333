@@ -92,24 +92,6 @@ export function Contact() {
               <span className="text-sm text-muted-foreground">Suivez-moi</span>
               <div className="h-px flex-1 max-w-[100px] bg-border" />
               <div className="flex gap-3">
-                {[
-                  { icon: Instagram, label: "Instagram", href: "#" },
-                  { icon: Linkedin, label: "LinkedIn", href: "https://fr.linkedin.com/in/astrid-vavasseur-534880205" },
-                ].map((social) => {
-                  const Icon = social.icon
-                  return (
-
-                    key = { social.label }
-                      href = { social.href }
-                  target = "_blank"
-                  rel = "noopener noreferrer"
-                  className = "w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-colors"
-                  aria - label={ social.label }
-                >
-                <Icon size={18} />
-                    </a>
-              )
-                })}
             </div>
         </div>
       </motion.div>
