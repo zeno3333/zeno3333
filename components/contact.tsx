@@ -97,7 +97,8 @@ export function Contact() {
               <div className="flex gap-3">
                 {[
                   { icon: Instagram, label: "Instagram" },
-                  { icon: Linkedin, label: "LinkedIn" },
+                    { icon: Linkedin, label: "LinkedIn", href: "https://fr.linkedin.com/in/astrid-vavasseur-534880205" },
+,
                 ].map((social) => {
                   const Icon = social.icon
                   return (
