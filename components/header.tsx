@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { useState } from "react"
 import { Menu, X } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
@@ -19,8 +20,8 @@ export function Header() {
       <div className="mx-4 mt-4">
         <div className="max-w-7xl mx-auto bg-card/80 backdrop-blur-xl rounded-2xl border border-border/50 shadow-lg">
           <div className="flex items-center justify-between h-16 px-6">
-            <Link href="/" className="text-xl font-bold text-foreground">
-              <span className="font-sans text-accent">Vava</span><span className="font-serif italic text-primary">Studio</span>
+            <Link href="/">
+              <Image src="/logo.svg" alt="VavaStudio" width={140} height={52} className="h-10 w-auto" priority />
             </Link>
 
             <nav className="hidden md:flex items-center gap-1">

@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { motion } from "framer-motion"
 import { Instagram, Linkedin } from "lucide-react"
 
@@ -34,9 +35,8 @@ export function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <Link href="/" className="inline-block mb-4 text-2xl font-bold">
-              <span className="font-sans text-accent">Vava</span>
-              <span className="font-serif italic text-primary">Studio</span>
+            <Link href="/" className="inline-block mb-4">
+              <Image src="/logo.svg" alt="VavaStudio" width={160} height={60} className="h-12 w-auto" />
             </Link>
             <p className="text-muted-foreground leading-relaxed text-sm max-w-xs">
               Direction artistique & création de contenus digitaux pour des marques qui veulent se démarquer.
