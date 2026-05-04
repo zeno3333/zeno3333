@@ -4,6 +4,7 @@ import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { ArrowUpRight } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 
 const categories = ["Tous", "Social Media", "Direction Artistique", "Web", "Galerie", "Rédaction", "Iconographie"]
 
@@ -14,6 +15,7 @@ const projects = [
     description: "Nespresso, Seat, Samsung, Cassegrain, LCL...",
     tag: "CRÉATION DE CONTENUS",
     gradient: "from-primary to-primary/60",
+    image: "/projects/grandes-marques.png",
   },
   {
     title: "Idéation",
@@ -21,6 +23,7 @@ const projects = [
     description: "Concepts publicitaires, Rebranding",
     tag: "DIRECTION ARTISTIQUE",
     gradient: "from-accent to-accent/60",
+    image: "/projects/ideation.png",
   },
   {
     title: "Site Vitrine",
@@ -28,6 +31,7 @@ const projects = [
     description: "Templates, SEO, Sites sur-mesure",
     tag: "WEB",
     gradient: "from-primary/80 to-accent/40",
+    image: "/projects/site-vitrine.png",
   },
   {
     title: "Photos",
@@ -35,6 +39,7 @@ const projects = [
     description: "Shooting produit, lifestyle",
     tag: "GALERIE",
     gradient: "from-accent/80 to-primary/40",
+    image: "/projects/photos.png",
   },
   {
     title: "Copywriting",
@@ -42,6 +47,7 @@ const projects = [
     description: "Newsletter, blog, accroches",
     tag: "RÉDACTION",
     gradient: "from-primary to-primary/35",
+    image: "/projects/copywriting.png",
   },
   {
     title: "Iconographie",
@@ -49,6 +55,7 @@ const projects = [
     description: "Illustrations, pictogrammes",
     tag: "GRAPHISME",
     gradient: "from-accent to-primary",
+    image: "/projects/iconographie.png",
   },
 ]
 
@@ -69,7 +76,6 @@ export function Portfolio() {
 
   return (
     <section id="portfolio" className="py-24 lg:py-32 bg-secondary relative overflow-hidden">
-      {/* Decorative large circle */}
       <div className="absolute -left-64 top-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-accent/10 rounded-full hidden lg:block" />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
@@ -123,9 +129,16 @@ export function Portfolio() {
               >
                 <Link href="#" className="group block">
                   <div className="aspect-[4/5] rounded-3xl overflow-hidden relative">
-                    <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient}`} />
 
-                    {/* Content overlay */}
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+
+                    <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-60`} />
+
                     <div className="absolute inset-0 p-6 flex flex-col justify-between">
                       <div className="self-end">
                         <motion.div
@@ -156,7 +169,6 @@ export function Portfolio() {
           </AnimatePresence>
         </motion.div>
 
-        {/* Dotted line decoration */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
