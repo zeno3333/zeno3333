@@ -1,0 +1,55 @@
+import Image from "next/image"
+
+const logos = [
+  { src: "/logo-2.svg", name: "Logo 2" },
+  { src: "/logo-3.svg", name: "Logo 3" },
+  { src: "/logo-4.svg", name: "Logo 4" },
+  { src: "/logo-5.svg", name: "Logo 5" },
+  { src: "/logo-6.svg", name: "Logo 6" },
+]
+
+const duplicatedLogos = [...logos, ...logos, ...logos, ...logos]
+
+export function LogoBanner() {
+  return (
+    <section className="overflow-hidden">
+      <div className="bg-background py-16 px-6">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl sm:text-4xl mb-6">
+            <span className="font-sans font-bold text-foreground">Ils m&apos;ont fait </span>
+            <span className="font-serif italic text-primary">confiance !</span>
+          </h2>
+          <p className="text-muted-foreground text-lg leading-relaxed">
+            Diplômée d&apos;un{" "}
+            <span className="font-semibold text-accent">
+              Master 2 en direction artistique et conception-rédaction
+            </span>{" "}
+            (Le Quatre by ISCOM), complétée par des expériences en agences parisiennes (
+            <span className="text-gray-500 font-medium">BBDO</span>,{" "}
+            <span className="text-gray-500 font-medium">McCann</span>) et en freelance.
+          </p>
+        </div>
+      </div>
+
+      <div className="bg-primary py-10 overflow-hidden">
+        <div className="flex items-center animate-logo-scroll">
+          {duplicatedLogos.map((logo, index) => (
+            <div
+              key={index}
+              className="flex-shrink-0 w-64 flex items-center justify-center px-10"
+              aria-hidden={index >= logos.length ? true : undefined}
+            >
+              <Image
+                src={logo.src}
+                alt={index < logos.length ? logo.name : ""}
+                width={180}
+                height={80}
+                className="h-28 w-auto object-contain brightness-0 invert opacity-90"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
