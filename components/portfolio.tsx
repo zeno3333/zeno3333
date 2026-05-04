@@ -41,7 +41,7 @@ const projects = [
     category: "Rédaction",
     description: "Newsletter, blog, accroches",
     tag: "RÉDACTION",
-    gradient: "from-primary to-primary/60",
+    gradient: "from-primary to-primary/35",
   },
   {
     title: "Iconographie",
