@@ -31,8 +31,8 @@ const socialLinks = [
 export function Footer() {
   return (
     <footer className="bg-secondary relative overflow-hidden pt-20 pb-8">
-      {/* Decorative circle — mirrors portfolio section */}
-      <div className="absolute -right-64 top-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-accent/10 rounded-full hidden lg:block pointer-events-none" />
+      {/* Decorative circle — bottom left */}
+      <div className="absolute -left-64 -bottom-64 w-[500px] h-[500px] bg-accent/10 rounded-full hidden lg:block pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
 
