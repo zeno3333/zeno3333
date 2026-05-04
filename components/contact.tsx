@@ -89,91 +89,90 @@ export function Contact() {
             </div>
 
             <div className="flex items-center gap-4 mt-10">
-              <span className="text-sm text-muted-foreground">Suivez-moi</span>
               <div className="h-px flex-1 max-w-[100px] bg-border" />
               <div className="flex gap-3">
+              </div>
             </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
+            <div className="bg-card rounded-3xl p-8 lg:p-10 border border-border">
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
+                    Votre nom
+                  </label>
+                  <div className={`relative rounded-2xl border-2 transition-colors duration-200 ${focused === 'name' ? 'border-primary bg-card' : 'border-border bg-secondary/30'}`}>
+                    <input
+                      type="text"
+                      id="name"
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      onFocus={() => setFocused('name')}
+                      onBlur={() => setFocused(null)}
+                      className="w-full px-5 py-4 bg-transparent text-foreground placeholder:text-muted-foreground focus:outline-none rounded-2xl"
+                      placeholder="Jean Dupont"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
+                    Email
+                  </label>
+                  <div className={`relative rounded-2xl border-2 transition-colors duration-200 ${focused === 'email' ? 'border-primary bg-card' : 'border-border bg-secondary/30'}`}>
+                    <input
+                      type="email"
+                      id="email"
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      onFocus={() => setFocused('email')}
+                      onBlur={() => setFocused(null)}
+                      className="w-full px-5 py-4 bg-transparent text-foreground placeholder:text-muted-foreground focus:outline-none rounded-2xl"
+                      placeholder="jean@exemple.com"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
+                    Votre projet
+                  </label>
+                  <div className={`relative rounded-2xl border-2 transition-colors duration-200 ${focused === 'message' ? 'border-primary bg-card' : 'border-border bg-secondary/30'}`}>
+                    <textarea
+                      id="message"
+                      rows={5}
+                      value={formData.message}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      onFocus={() => setFocused('message')}
+                      onBlur={() => setFocused(null)}
+                      className="w-full px-5 py-4 bg-transparent text-foreground placeholder:text-muted-foreground focus:outline-none resize-none rounded-2xl"
+                      placeholder="Décrivez votre projet en quelques mots..."
+                      required
+                    />
+                  </div>
+                </div>
+
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  type="submit"
+                  className="w-full inline-flex items-center justify-center gap-3 px-8 py-4 bg-primary text-white font-medium rounded-full hover:bg-primary/90 transition-colors"
+                >
+                  Envoyer le message
+                  <ArrowRight size={18} />
+                </motion.button>
+              </form>
+            </div>
+          </motion.div>
         </div>
-      </motion.div>
-
-      <motion.div
-        initial={{ opacity: 0, x: 20 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: 0.1 }}
-      >
-        <div className="bg-card rounded-3xl p-8 lg:p-10 border border-border">
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div>
-              <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
-                Votre nom
-              </label>
-              <div className={`relative rounded-2xl border-2 transition-colors duration-200 ${focused === 'name' ? 'border-primary bg-card' : 'border-border bg-secondary/30'}`}>
-                <input
-                  type="text"
-                  id="name"
-                  value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  onFocus={() => setFocused('name')}
-                  onBlur={() => setFocused(null)}
-                  className="w-full px-5 py-4 bg-transparent text-foreground placeholder:text-muted-foreground focus:outline-none rounded-2xl"
-                  placeholder="Jean Dupont"
-                  required
-                />
-              </div>
-            </div>
-
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-                Email
-              </label>
-              <div className={`relative rounded-2xl border-2 transition-colors duration-200 ${focused === 'email' ? 'border-primary bg-card' : 'border-border bg-secondary/30'}`}>
-                <input
-                  type="email"
-                  id="email"
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  onFocus={() => setFocused('email')}
-                  onBlur={() => setFocused(null)}
-                  className="w-full px-5 py-4 bg-transparent text-foreground placeholder:text-muted-foreground focus:outline-none rounded-2xl"
-                  placeholder="jean@exemple.com"
-                  required
-                />
-              </div>
-            </div>
-
-            <div>
-              <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
-                Votre projet
-              </label>
-              <div className={`relative rounded-2xl border-2 transition-colors duration-200 ${focused === 'message' ? 'border-primary bg-card' : 'border-border bg-secondary/30'}`}>
-                <textarea
-                  id="message"
-                  rows={5}
-                  value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  onFocus={() => setFocused('message')}
-                  onBlur={() => setFocused(null)}
-                  className="w-full px-5 py-4 bg-transparent text-foreground placeholder:text-muted-foreground focus:outline-none resize-none rounded-2xl"
-                  placeholder="Décrivez votre projet en quelques mots..."
-                  required
-                />
-              </div>
-            </div>
-
-            <motion.button
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              type="submit"
-              className="w-full inline-flex items-center justify-center gap-3 px-8 py-4 bg-primary text-white font-medium rounded-full hover:bg-primary/90 transition-colors"
-            >
-              Envoyer le message
-              <ArrowRight size={18} />
-            </motion.button>
-          </form>
-        </div>
-      </motion.div>
-    </div>
       </div >
     </section >
   )
