@@ -13,6 +13,14 @@ function TikTokIcon({ size = 18, className = "" }: { size?: number; className?: 
   )
 }
 
+function StarIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
+      <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" />
+    </svg>
+  )
+}
+
 const navLinks = ["Services", "Projets", "Contact"]
 const socialLinks = [
   { label: "Instagram", href: "#", Icon: Instagram },
@@ -22,43 +30,71 @@ const socialLinks = [
 
 export function Footer() {
   return (
-    <footer className="bg-background border-t border-border/50 pt-16 pb-8">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <footer className="bg-secondary relative overflow-hidden pt-20 pb-8">
+      {/* Decorative circle — mirrors portfolio section */}
+      <div className="absolute -right-64 top-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-accent/10 rounded-full hidden lg:block pointer-events-none" />
 
-        {/* Top section */}
-        <div className="grid md:grid-cols-3 gap-12 mb-12">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
 
-          {/* Brand */}
+        {/* Section label */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="flex items-center gap-2 mb-10"
+        >
+          <StarIcon className="w-4 h-4 text-primary" />
+          <span className="text-sm text-primary font-medium tracking-widest uppercase">Contact</span>
+        </motion.div>
+
+        {/* Headline */}
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.05 }}
+          className="text-4xl sm:text-5xl lg:text-6xl mb-16"
+        >
+          <span className="font-serif italic text-primary">Restons</span>
+          <br />
+          <span className="font-sans font-bold text-foreground">en contact</span>
+        </motion.h2>
+
+        {/* Grid */}
+        <div className="grid md:grid-cols-3 gap-8 mb-16">
+
+          {/* Brand card */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.4 }}
+            className="bg-card/95 backdrop-blur-sm rounded-3xl p-6"
           >
             <Link href="/" className="inline-block mb-4">
               <Image src="/logo.svg" alt="VavaStudio" width={160} height={60} className="h-12 w-auto" />
             </Link>
-            <p className="text-muted-foreground leading-relaxed text-sm max-w-xs">
+            <p className="text-muted-foreground leading-relaxed text-sm">
               Direction artistique & création de contenus digitaux pour des marques qui veulent se démarquer.
             </p>
           </motion.div>
 
-          {/* Navigation */}
+          {/* Navigation card */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
+            transition={{ duration: 0.4, delay: 0.1 }}
+            className="bg-card/95 backdrop-blur-sm rounded-3xl p-6"
           >
-            <h4 className="font-sans font-semibold text-foreground mb-5 text-sm uppercase tracking-wider">
-              Navigation
-            </h4>
-            <nav className="flex flex-col gap-3">
+            <span className="text-xs text-primary font-bold tracking-wider uppercase">Navigation</span>
+            <nav className="flex flex-col gap-3 mt-4">
               {navLinks.map((item) => (
                 <Link
                   key={item}
                   href={`#${item.toLowerCase()}`}
-                  className="text-muted-foreground hover:text-foreground transition-colors text-sm"
+                  className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium"
                 >
                   {item}
                 </Link>
@@ -66,24 +102,23 @@ export function Footer() {
             </nav>
           </motion.div>
 
-          {/* Social */}
+          {/* Social card */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            transition={{ duration: 0.4, delay: 0.2 }}
+            className="bg-card/95 backdrop-blur-sm rounded-3xl p-6"
           >
-            <h4 className="font-sans font-semibold text-foreground mb-5 text-sm uppercase tracking-wider">
-              Retrouvez-nous
-            </h4>
-            <nav className="flex flex-col gap-3">
+            <span className="text-xs text-primary font-bold tracking-wider uppercase">Retrouvez-nous</span>
+            <nav className="flex flex-col gap-3 mt-4">
               {socialLinks.map(({ label, href, Icon }) => (
                 <a
                   key={label}
                   href={href}
                   className="flex items-center gap-2.5 text-muted-foreground hover:text-primary transition-colors text-sm group"
                 >
-                  <span className="w-8 h-8 rounded-lg bg-muted flex items-center justify-center group-hover:bg-primary/10 transition-colors">
+                  <span className="w-8 h-8 rounded-lg bg-secondary flex items-center justify-center group-hover:bg-primary/10 transition-colors">
                     <Icon size={16} />
                   </span>
                   {label}
@@ -93,15 +128,25 @@ export function Footer() {
           </motion.div>
         </div>
 
-        {/* Divider */}
-        <div className="h-px bg-border/60 mb-8" />
-
-        {/* Bottom section */}
+        {/* Dotted divider — identical to portfolio */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.3 }}
+          transition={{ delay: 0.4 }}
+          className="flex items-center justify-center gap-2 mb-8"
+        >
+          <div className="flex-1 max-w-xs border-t-2 border-dotted border-border" />
+          <StarIcon className="w-4 h-4 text-primary" />
+          <div className="flex-1 max-w-xs border-t-2 border-dotted border-border" />
+        </motion.div>
+
+        {/* Bottom bar */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.5 }}
           className="flex flex-col md:flex-row items-center justify-between gap-4"
         >
           <p className="text-sm text-muted-foreground">
