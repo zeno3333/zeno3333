@@ -27,7 +27,6 @@ export function Contact() {
 
   return (
     <section id="contact" className="py-24 lg:py-32 relative overflow-hidden">
-      {/* Decorative elements */}
       <div className="absolute top-10 right-10 text-primary/20">
         <StarIcon className="w-8 h-8" />
       </div>
@@ -35,7 +34,6 @@ export function Contact() {
         <StarIcon className="w-6 h-6" />
       </div>
 
-      {/* Large decorative circle */}
       <div className="absolute -right-32 top-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-accent rounded-full opacity-10 hidden lg:block" />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
@@ -90,7 +88,6 @@ export function Contact() {
               </motion.div>
             </div>
 
-            {/* Social links */}
             <div className="flex items-center gap-4 mt-10">
               <span className="text-sm text-muted-foreground">Suivez-moi</span>
               <div className="h-px flex-1 max-w-[100px] bg-border" />
