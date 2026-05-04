@@ -11,7 +11,7 @@ const projects = [
   {
     title: "Grandes marques",
     category: "Social Media",
-    description: "Nespresso, Seat, Samsung, Cassegrain, LCL, Ameska Paris",
+    description: "Nespresso, Seat, Samsung, Cassegrain, LCL...",
     tag: "CRÉATION DE CONTENUS",
     gradient: "from-primary to-primary/60",
   },
