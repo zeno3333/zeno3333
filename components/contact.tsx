@@ -7,7 +7,7 @@ import { ArrowRight, Mail, MapPin, Instagram, Linkedin } from "lucide-react"
 function StarIcon({ className = "" }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
-      <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"/>
+      <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" />
     </svg>
   )
 }
@@ -34,7 +34,7 @@ export function Contact() {
       <div className="absolute bottom-20 left-20 text-accent/20">
         <StarIcon className="w-6 h-6" />
       </div>
-      
+
       {/* Large decorative circle */}
       <div className="absolute -right-32 top-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-accent rounded-full opacity-10 hidden lg:block" />
 
@@ -50,13 +50,13 @@ export function Contact() {
               <StarIcon className="w-4 h-4 text-primary" />
               <span className="text-sm text-primary font-medium tracking-widest uppercase">Contact</span>
             </div>
-            
+
             <h2 className="text-4xl sm:text-5xl lg:text-6xl text-foreground mb-6">
               <span className="font-sans font-bold">Un projet</span>
               <br />
               <span className="font-serif italic text-primary">en tête ?</span>
             </h2>
-            
+
             <p className="text-lg text-muted-foreground leading-relaxed mb-12 max-w-md">
               Parlons-en ensemble et donnons vie à vos idées créatives.
             </p>
@@ -85,7 +85,7 @@ export function Contact() {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Localisation</p>
-                  <p className="font-sans font-semibold text-foreground">Paris, France</p>
+                  <p className="font-sans font-semibold text-foreground">Rouen / Paris</p>
                 </div>
               </motion.div>
             </div>
@@ -141,7 +141,7 @@ export function Contact() {
                     />
                   </div>
                 </div>
-                
+
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
                     Email
