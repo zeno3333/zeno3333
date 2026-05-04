@@ -41,7 +41,7 @@ const projects = [
     category: "Rédaction",
     description: "Newsletter, blog, accroches",
     tag: "RÉDACTION",
-    gradient: "from-foreground/80 to-foreground/40",
+    gradient: "from-primary to-primary/60",
   },
   {
     title: "Iconographie",
@@ -99,8 +99,8 @@ export function Portfolio() {
                   key={category}
                   onClick={() => setActiveCategory(category)}
                   className={`px-5 py-2.5 text-sm font-medium rounded-full transition-all duration-200 ${activeCategory === category
-                      ? "bg-primary text-white"
-                      : "bg-card text-muted-foreground hover:text-foreground border border-border hover:border-primary/30"
+                    ? "bg-primary text-white"
+                    : "bg-card text-muted-foreground hover:text-foreground border border-border hover:border-primary/30"
                     }`}
                 >
                   {category}
