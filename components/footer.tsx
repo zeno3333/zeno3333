@@ -25,7 +25,6 @@ const navLinks = ["Services", "Projets", "Contact"]
 const socialLinks = [
   { label: "Instagram", href: "#", Icon: Instagram },
   { label: "LinkedIn", href: "https://fr.linkedin.com/in/astrid-vavasseur-534880205", Icon: Linkedin },
-  { label: "TikTok", href: "#", Icon: TikTokIcon },
 ]
 
 export function Footer() {
